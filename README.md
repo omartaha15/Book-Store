@@ -26,4 +26,4 @@ To get started with this project, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/bookstore.git
+   git clone https://github.com/omartaha15/bookstore.git
