@@ -1,0 +1,47 @@
+﻿@model ApplicationUser
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4">
+        <h1 class="text-center mb-4">User Profile</h1>
+
+        <div class="row">
+            <!-- Profile Picture and Username Section -->
+            <div class="col-md-4 text-center">
+                <div class="profile-section mb-4">
+                    <h4 class="mb-3">@Model.UserName</h4>
+                    
+                </div>
+            </div>
+
+            <!-- User Details Section -->
+            <div class="col-md-8">
+                <div class="details-section">
+                    <h2 class="mb-4">Details</h2>
+                    <dl class="row">
+                        <dt class="col-sm-4"><i class="bi bi-envelope-fill"></i> Email</dt>
+                        <dd class="col-sm-8">@Model.Email</dd>
+
+                        <dt class="col-sm-4"><i class="bi bi-person-fill"></i> First Name</dt>
+                        <dd class="col-sm-8">@Model.FirstName</dd>
+
+                        <dt class="col-sm-4"><i class="bi bi-person-fill"></i> Last Name</dt>
+                        <dd class="col-sm-8">@Model.LastName</dd>
+
+                        <dt class="col-sm-4"><i class="bi bi-calendar-event-fill"></i> Date of Birth</dt>
+                        <dd class="col-sm-8">@(Model.DateOfBirth?.ToString( "MMMM dd, yyyy" ) ?? "N/A")</dd>
+
+                        <dt class="col-sm-4"><i class="bi bi-clock-fill"></i> Joined On</dt>
+                        <dd class="col-sm-8">@Model.JoinedDate.ToString( "MMMM dd, yyyy" )</dd>
+                    </dl>
+                </div>
+
+                <!-- Edit Profile Button -->
+                <div class="text-center mt-4">
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-lg">
+                        <i class="bi bi-pencil-square"></i> Edit Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

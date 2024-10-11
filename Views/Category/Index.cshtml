@@ -1,0 +1,58 @@
+﻿@model List<Category>
+
+@{
+    ViewData [ "Title" ] = "Category";
+}
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-secondary text-dark">Category</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Create
+            </a>
+        </div>
+    </div>
+</div>
+
+@if ( Model != null && Model.Count > 0 )
+{
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th>@Html.DisplayName( "Id" )</th>
+                <th>@Html.DisplayName( "Name" )</th>
+                <th>@Html.DisplayName( "Description" )</th>
+                <th>@Html.DisplayName( "DisplayOrder" )</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ( var item in Model )
+            {
+                <tr class="table-light">
+                    <td>@Html.DisplayFor( m => item.Id )</td>
+                    <td>@Html.DisplayFor( m => item.Name )</td>
+                    <td>@Html.DisplayFor( m => item.Description )</td>
+                    <td>@Html.DisplayFor( m => item.DisplayOrder )</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary">
+                            <i class="bi bi-pencil"></i> Edit
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning" role="alert">
+        No categories found.
+    </div>
+}
