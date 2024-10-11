@@ -7,7 +7,6 @@ This is a Book Store project developed using ASP.NET Core. The application allow
 ## Features
 
 - **User Authentication**: Users can register, log in, and manage their profiles.
-- **Book Categories**: Browse books by different categories such as Fiction, Science Fiction, Mystery, Biography, and Fantasy.
 - **Shopping Cart**: Add, remove, and view items in the shopping cart.
 - **Admin Panel**: Admin users can manage book categories and book listings.
 - **Responsive Design**: The application is designed to be mobile-friendly.
